@@ -9,22 +9,24 @@
 <input type="number" id="year" name="year" placeholder="Enter year" oninput="theKy(this.value)"
        onchange="theKy(this.value)">
 <p>Thuộc thế kỷ: <span id="result1"></span></p>
+<p>Thuộc thế kỷ: <span id="result2"></span></p>
 <script>
   function theKy() {
     let year = +document.querySelector('#year').value;
-    let theky = 1;
-    let i = 100;
-    let flag = false;
-    while (flag !== true) {
-      if (year > i) {
-        i +=100;
-        theky++;
-      }
-      else {
-        flag = true;
-      }
-    }
-    document.querySelector('#result1').innerHTML= theky;
+    // let theky = 1;
+    // let i = 100;
+    // let flag = false;
+    // while (flag !== true) {
+    //   if (year > i) {
+    //     i +=100;
+    //     theky++;
+    //   }
+    //   else {
+    //     flag = true;
+    //   }
+    // }
+    // document.querySelector('#result1').innerHTML= theky;
+    document.querySelector('#result2').innerHTML= Math.ceil(year/100);
   }
 </script>
 </body>

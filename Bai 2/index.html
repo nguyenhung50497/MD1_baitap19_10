@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>3.in ra các phần tử: </p>
+<p id="inphantu"></p>
+<p>4.Tổng các phần tử: <span id="tong1"></span></p>
+<p>5.Tổng các phần tử chia 5 dư 2: <span id="tong2"></span></p>
+<p>6. Số phần tử chia hết cho 6: <span id="chiahet6"></span></p>
+<p>7. TBC các phần tử >10 và chia 4 dư 3: <span id="tbc"></span></p>
+<p>8. Phần tử lớn nhất mảng: <span id="max"></span></p>
+<p>9. Phần tử lớn nhất của các phẩn tử lẻ trong mảng: <span id="maxle"></span></p>
+<p>10. Vị trí phần tử x trong mảng: <span id="phantux"></span></p>
+<script>
+    let n = +prompt('Nhập vào số phần tử của mảng:');
+    let array = [];
+    for (let i=0; i<n; i++) {
+        array.push(+prompt('Nhập vào phần tử của mảng:'));
+    }
+    console.log(array);
+
+    //1,2,3,4,5,6,7,8,9
+    let tong1 = 0;
+    let tong2 = 0;
+    let count6 = 0;
+    let tong3 = 0;
+    let count3 = 0;
+    let max = array[0];
+    let maxle = 0;
+    let flag = false;
+    for (let i=0; i<array.length; i++) {
+        document.querySelector('#inphantu').innerHTML += `Phần tử vị trí ${i} là: ${array[i]} </br>`;
+        tong1 += array[i];
+        if (array[i]%5 === 2) {
+            tong2 += array[i];
+        }
+        if (array[i]%6 === 0) {
+            count6++
+        }
+        if ((array[i]>10) && (array[i]%4 === 3)) {
+            tong3 += array[i];
+            count3++;
+        }
+        if (max<array[i]) {
+            max = array[i];
+        }
+        if (array[i]%2 !== 0) {
+            if (maxle<array[i]) {
+                maxle = array[i];
+            }
+        }
+    }
+    document.querySelector('#tong1').innerHTML= tong1;
+    document.querySelector('#tong2').innerHTML= tong2;
+    document.querySelector('#chiahet6').innerHTML= count6;
+    document.querySelector('#tbc').innerHTML= tong3/count3;
+    document.querySelector('#max').innerHTML= max;
+    document.querySelector('#maxle').innerHTML= maxle;
+
+    //10
+    let x = +prompt('Nhập vào 1 số x:');
+    for (let i=0; i<array.length; i++) {
+        if (x === array[i]) {
+            document.querySelector('#phantux').innerHTML= `${x} nằm tại vị trí ${i}`;
+            flag = true;
+            break;
+        }
+    }
+    if (flag === false) {
+        document.querySelector('#phantux').innerHTML= `${x} không nằm trong mảng`;
+    }
+</script>
+</body>
+</html>
