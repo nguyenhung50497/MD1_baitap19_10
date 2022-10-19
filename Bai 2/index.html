@@ -22,14 +22,12 @@
     }
     console.log(array);
 
-    //1,2,3,4,5,6,7,8,9
+    //1,2,3,4,5,6,7
     let tong1 = 0;
     let tong2 = 0;
     let count6 = 0;
     let tong3 = 0;
     let count3 = 0;
-    let max = array[0];
-    let maxle = 0;
     let flag = false;
     for (let i=0; i<array.length; i++) {
         document.querySelector('#inphantu').innerHTML += `Phần tử vị trí ${i} là: ${array[i]} </br>`;
@@ -44,21 +42,12 @@
             tong3 += array[i];
             count3++;
         }
-        if (max<array[i]) {
-            max = array[i];
-        }
-        if (array[i]%2 !== 0) {
-            if (maxle<array[i]) {
-                maxle = array[i];
-            }
-        }
     }
     document.querySelector('#tong1').innerHTML= tong1;
     document.querySelector('#tong2').innerHTML= tong2;
     document.querySelector('#chiahet6').innerHTML= count6;
     document.querySelector('#tbc').innerHTML= tong3/count3;
-    document.querySelector('#max').innerHTML= max;
-    document.querySelector('#maxle').innerHTML= maxle;
+
 
     //10
     let x = +prompt('Nhập vào 1 số x:');
@@ -71,6 +60,17 @@
     }
     if (flag === false) {
         document.querySelector('#phantux').innerHTML= `${x} không nằm trong mảng`;
+    }
+
+    //8,9
+    array.sort(function (a,b) {return b - a;});
+    console.log(array);
+    document.querySelector('#max').innerHTML= array[0];
+    for (let i=0; i<array.length; i++) {
+        if (array[i]%2 !== 0 ) {
+            document.querySelector('#maxle').innerHTML= array[i];
+            break;
+        }
     }
 </script>
 </body>
