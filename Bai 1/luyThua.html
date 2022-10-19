@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Nhập vào a và b:</h1>
+a: <input type="number" id="numbera" placeholder="Enter a" oninput="luyThua(this.value)" onchange="luyThua(this.value)">
+b: <input type="number" id="numberb" placeholder="Enter b" oninput="luyThua(this.value)" onchange="luyThua(this.value)">
+<p>a^2 = <span id="luythua2"></span></p>
+<p>a^b = <span id="luythuab"></span></p>
+<script>
+  function luyThua() {
+    let a = +document.querySelector('#numbera').value;
+    let b = +document.querySelector('#numberb').value;
+    document.querySelector('#luythua2').innerHTML= a**2;
+    document.querySelector('#luythuab').innerHTML= a**b;
+  }
+</script>
+</body>
+</html>

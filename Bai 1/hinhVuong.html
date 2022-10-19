@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Nhập độ dài cạnh hình vuông:</h1>
+<input type="number" id="canha" name="canha" oninput="tinhCS(this.value)" onchange="tinhCS(this.value)">cm
+<p>Chu vi hình vuông: <span id="chuvi"></span> cm</p>
+<p>Diện tích hình vuông: <span id="dientich"></span> cm2</p>
+<script>
+    function tinhCS() {
+        let canh = +document.querySelector('#canha').value;
+        let chuvi = canh*4;
+        let dientich = canh**2;
+        document.querySelector('#chuvi').innerHTML= chuvi;
+        document.querySelector('#dientich').innerHTML= dientich;
+    }
+</script>
+</body>
+</html>

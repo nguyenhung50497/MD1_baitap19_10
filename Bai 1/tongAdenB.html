@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Nhập vào a và b:</h1>
+a: <input type="number" id="a" placeholder="Enter a" oninput="tongAb(this.value)" onchange="tongAb(this.value)">
+b: <input type="number" id="b" placeholder="Enter b" oninput="tongAb(this.value)" onchange="tongAb(this.value)">
+<p>Tổng các số từ a đến b: <span id="tong"></span></p>
+<script>
+  function tongAb() {
+    let numa = +document.querySelector('#a').value;
+    let numb = +document.querySelector('#b').value;
+    let tong = 0;
+    if (numa>numb) {
+      for (let i=numb; i<=numa; i++) {
+        tong += i;
+      }
+    }
+    else {
+      for (let i=numa; i<=numb; i++) {
+        tong += i;
+      }
+    }
+    document.querySelector('#tong').innerHTML= tong;
+  }
+</script>
+</body>
+</html>

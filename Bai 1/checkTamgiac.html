@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Nhập vào a, b, c:</h1>
+a: <input type="number" id="a" placeholder="Enter a" oninput="checkTg(this.value)" onchange="checkTg(this.value)">
+b: <input type="number" id="b" placeholder="Enter b" oninput="checkTg(this.value)" onchange="checkTg(this.value)">
+c: <input type="number" id="c" placeholder="Enter c" oninput="checkTg(this.value)" onchange="checkTg(this.value)">
+<p>Kết quả: <span id="result"></span></p>
+<script>
+  function checkTg() {
+    let a = +document.querySelector('#a').value;
+    let b = +document.querySelector('#b').value;
+    let c = +document.querySelector('#c').value;
+    if ((a === b) && (b === c)) {
+      document.querySelector('#result').innerHTML= 'Tam giác đều';
+    }
+    else if (((a**2 + b**2) === c**2) || ((a**2 + c**2) === b**2) || ((b**2 + c**2) === a**2)) {
+      if ((a === b) || (b === c) || (a === c)) {
+        document.querySelector('#result').innerHTML = 'Tam giác vuông cân';
+      } else {
+        document.querySelector('#result').innerHTML = 'Tam giác vuông';
+      }
+    }
+    else if (((a+b)>c) && ((b+c)>a) && ((a+c)>b)) {
+      if ((a === b) || (b===c) || (a===c)) {
+        document.querySelector('#result').innerHTML= 'Tam giác cân';
+      }
+      else {
+        document.querySelector('#result').innerHTML= 'Tam giác thường';
+      }
+    }
+    else {
+      document.querySelector('#result').innerHTML= 'Không phải tam giác';
+    }
+  }
+</script>
+</body>
+</html>
