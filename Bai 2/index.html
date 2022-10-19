@@ -30,7 +30,7 @@
     let count3 = 0;
     let flag = false;
     for (let i=0; i<array.length; i++) {
-        document.querySelector('#inphantu').innerHTML += `Phần tử vị trí ${i} là: ${array[i]} </br>`;
+        document.querySelector('#inphantu').innerHTML += `Phần tử vị trí ${i+1} là: ${array[i]} </br>`;
         tong1 += array[i];
         if (array[i]%5 === 2) {
             tong2 += array[i];
@@ -53,7 +53,7 @@
     let x = +prompt('Nhập vào 1 số x:');
     for (let i=0; i<array.length; i++) {
         if (x === array[i]) {
-            document.querySelector('#phantux').innerHTML= `${x} nằm tại vị trí ${i}`;
+            document.querySelector('#phantux').innerHTML= `${x} nằm tại vị trí ${i+1}`;
             flag = true;
             break;
         }
